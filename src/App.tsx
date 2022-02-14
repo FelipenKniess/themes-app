@@ -1,7 +1,18 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import { ThemeContextProvider } from './hooks/theme';
+import Routes from './routes';
+import GlobalStyle from './Assets/styles/global';
 
-const App = () => (
-  <h2>Hello</h2>
+const App:React.FC = () => (
+  <BrowserRouter>
+    <ThemeContextProvider>
+      <GlobalStyle />
+      <ToastContainer position="top-center" />
+      <Routes />
+    </ThemeContextProvider>
+  </BrowserRouter>
 );
 
 export default App;
